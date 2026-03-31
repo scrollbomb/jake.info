@@ -40,10 +40,9 @@ function initReel() {
   const reelEmbed = document.querySelector('.reel-embed');
   if (!reelEmbed) return;
 
-  // Pick a random project with a video
-  const withVideo = projects.filter(p => p.videoUrl);
-  if (!withVideo.length) return;
-  const featured = withVideo[Math.floor(Math.random() * withVideo.length)];
+  // Pin reel to We Got Love case study
+  const featured = projects.find(p => p.id === 'yeezy-we-got-love');
+  if (!featured) return;
 
   // Autoplay muted in the hero
   const video = document.createElement('video');
