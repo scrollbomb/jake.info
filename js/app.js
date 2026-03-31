@@ -15,15 +15,14 @@ function shuffle(arr) {
 function sortProjects(arr) {
   const brandTypes = ['Brand Campaign', 'Brand Film', 'Product Film', 'Retail Campaign', 'Promo Campaign', 'Social Content'];
 
-  // Pin We Got Love to the top
-  const pinned = arr.filter(p => p.id === 'yeezy-we-got-love');
-  const unpinned = arr.filter(p => p.id !== 'yeezy-we-got-love');
+  // Exclude We Got Love from grid — it's the reel hero
+  const grid = arr.filter(p => p.id !== 'yeezy-we-got-love');
 
-  const brand = unpinned.filter(p => brandTypes.includes(p.type));
-  const music = unpinned.filter(p => p.type === 'Music Video');
-  const rest = unpinned.filter(p => !brandTypes.includes(p.type) && p.type !== 'Music Video');
+  const brand = grid.filter(p => brandTypes.includes(p.type));
+  const music = grid.filter(p => p.type === 'Music Video');
+  const rest = grid.filter(p => !brandTypes.includes(p.type) && p.type !== 'Music Video');
 
-  return [...pinned, ...shuffle(brand), ...shuffle(music), ...shuffle(rest)];
+  return [...shuffle(brand), ...shuffle(music), ...shuffle(rest)];
 }
 
 document.addEventListener('DOMContentLoaded', () => {
