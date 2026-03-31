@@ -15,12 +15,9 @@ function shuffle(arr) {
 function sortProjects(arr) {
   const brandTypes = ['Brand Campaign', 'Brand Film', 'Product Film', 'Retail Campaign', 'Promo Campaign', 'Social Content'];
 
-  // Exclude We Got Love from grid — it's the reel hero
-  const grid = arr.filter(p => p.id !== 'yeezy-we-got-love');
-
-  const brand = grid.filter(p => brandTypes.includes(p.type));
-  const music = grid.filter(p => p.type === 'Music Video');
-  const rest = grid.filter(p => !brandTypes.includes(p.type) && p.type !== 'Music Video');
+  const brand = arr.filter(p => brandTypes.includes(p.type));
+  const music = arr.filter(p => p.type === 'Music Video');
+  const rest = arr.filter(p => !brandTypes.includes(p.type) && p.type !== 'Music Video');
 
   return [...shuffle(brand), ...shuffle(music), ...shuffle(rest)];
 }
@@ -75,6 +72,9 @@ function renderGrid() {
   if (!grid) return;
 
   projects.forEach((project, index) => {
+    // Skip We Got Love — it's the reel hero
+    if (project.id === 'yeezy-we-got-love') return;
+
     const item = document.createElement('div');
     item.className = 'grid-item';
     item.dataset.index = index;
