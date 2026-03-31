@@ -1,0 +1,68 @@
+/* ============================================
+   jake.info — Portfolio Page
+   ============================================ */
+
+.portfolio-list {
+  list-style: none;
+  padding: 0;
+  columns: 2;
+  column-gap: 32px;
+}
+
+.portfolio-link {
+  display: block;
+  padding: 2px 0;
+  cursor: pointer;
+  break-inside: avoid;
+}
+
+.portfolio-link-title {
+  font-size: 12px;
+  font-weight: 400;
+  color: #0000EE;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.portfolio-link-title:visited {
+  color: #551A8B;
+}
+
+.portfolio-link-title:hover {
+  color: #0000CC;
+}
+
+/* --- Cursor Preview --- */
+.cursor-preview {
+  position: fixed;
+  pointer-events: none;
+  z-index: 300;
+  width: 280px;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 100ms ease-out;
+  border: 1px solid var(--border);
+}
+
+.cursor-preview.visible {
+  opacity: 1;
+}
+
+.cursor-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  .portfolio-list {
+    columns: 1;
+  }
+
+  .cursor-preview {
+    display: none;
+  }
+}

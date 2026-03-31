@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jake Osmun — Portfolio</title>
+  <meta name="description" content="Jake Osmun — Selected work. Creative director, director, and visual artist based in Phoenix, AZ.">
+  <meta property="og:title" content="Jake Osmun — Portfolio">
+  <meta property="og:description" content="Creative director, director, and visual artist. 10+ years making commercial work that doesn't look like commercial work.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jake.info/portfolio">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>J</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/portfolio.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="/work.html" class="nav-name">Jake Osmun</a>
+    <ul class="nav-links">
+      <li><a href="/work.html">Work</a></li>
+      <li><a href="/portfolio.html" class="active">Portfolio</a></li>
+      <li><a href="/cv.html">CV</a></li>
+      <li><a href="/info.html">Info</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Content -->
+  <main class="page portfolio-page">
+    <ul class="portfolio-list" id="portfolio-list"></ul>
+  </main>
+
+  <!-- Cursor preview -->
+  <div class="cursor-preview" id="cursor-preview"></div>
+
+  <script src="data/projects.js"></script>
+  <script src="js/portfolio.js"></script>
+  <script src="js/nav.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jake Osmun — Info</title>
+  <meta name="description" content="Jake Osmun — Creative director, director, and visual artist based in Phoenix, AZ. Open for select projects.">
+  <meta property="og:title" content="Jake Osmun — Info">
+  <meta property="og:description" content="Creative director, director, and visual artist. 10+ years making commercial work that doesn't look like commercial work.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jake.info/info">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>J</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="/work.html" class="nav-name">Jake Osmun</a>
+    <ul class="nav-links">
+      <li><a href="/work.html">Work</a></li>
+      <li><a href="/portfolio.html">Portfolio</a></li>
+      <li><a href="/cv.html">CV</a></li>
+      <li><a href="/info.html" class="active">Info</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Content -->
+  <main class="page info">
+
+    <!-- Lede -->
+    <section class="info-lede">
+      Phoenix-based creative director and filmmaker with roots in Chicago's rap and streetwear scene. Over the past decade, I've directed music videos with 50M+ annual views, edited broadcast spots under Tony Kaye at Havas, built campaigns for Nike, Hulu, and Foot Locker, and exhibited digital art at Sotheby's New York. I work across the full post pipeline — edit, color, motion, sound, delivery — and I treat every project like it's mine.
+    </section>
+
+    <!-- Meta Grid -->
+    <section class="info-grid">
+      <div class="info-row">
+        <div class="info-label">Based</div>
+        <div class="info-value">Phoenix, AZ</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Representation</div>
+        <div class="info-value">No Future LLC</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Availability</div>
+        <div class="info-value">Open — select projects</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Contact</div>
+        <div class="info-value"><a href="mailto:jake@jake.info" class="info-link">jake@jake.info</a></div>
+      </div>
+    </section>
+
+    <!-- Client Strip -->
+    <section class="clients" id="clients-strip"></section>
+
+  </main>
+
+  <script src="data/projects.js"></script>
+  <script>
+    // Render client strip
+    const strip = document.getElementById('clients-strip');
+    if (strip) {
+      strip.innerHTML = clients.map(c => '<span>' + c.toUpperCase() + '</span>').join('·');
+    }
+  </script>
+  <script src="js/nav.js"></script>
+
+</body>
+</html>
